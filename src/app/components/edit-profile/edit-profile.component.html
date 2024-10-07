@@ -1,0 +1,25 @@
+
+
+<div class="form-container">
+<form (ngSubmit)="saveProfile()">
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="editedProfile.name" name="name" required>
+
+  <label>Surname:</label>
+  <input type="text" [(ngModel)]="editedProfile.surname" name="surname" required>
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="editedProfile.email" name="email" required>
+
+  <label>Phone:</label>
+  <input type="text" [(ngModel)]="editedProfile.phone" name="phone" required>
+
+  <label>Favorite Programming Language:</label>
+  <input type="text" [(ngModel)]="editedProfile.favoriteProgrammingLanguage" name="favoriteProgrammingLanguage" required>
+</form>
+
+  <div class="buttons">
+  <button type="submit">Save</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</div>
+</div>

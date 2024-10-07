@@ -1,0 +1,22 @@
+<div class="container">
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <h2>User Profiles</h2>
+  <ul>
+    <li *ngFor="let profile of userProfiles">
+      <strong>{{ profile.name }}</strong> ({{ profile.surname }})
+      <button (click)="editProfile(profile)">Edit</button>
+      <button (click)="deleteProfile(profile.id)">Delete</button>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedProfile">
+    <h3>Edit Profile</h3>
+    <input [(ngModel)]="selectedProfile.name" placeholder="Name" />
+    <input [(ngModel)]="selectedProfile.surname" placeholder="Surname" />
+    <input [(ngModel)]="selectedProfile.email" placeholder="Email" />
+    <input [(ngModel)]="selectedProfile.phone" placeholder="Phone" />
+    <input [(ngModel)]="selectedProfile.favoriteProgrammingLanguage" placeholder="Favorite Programming Language" />
+    <button (click)="saveProfile(selectedProfile)">Save</button> 
+    <button (click)="selectedProfile = undefined">Cancel</button>
+  </div>
+</div>

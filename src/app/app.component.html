@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="logo">
+   <img src="assets/logo.png" alt="Logo">
+  </div>
+
+
+  <h1>{{ isEditing ? 'Edit Profile' : 'Welcome to My BotsZA CRUD Profile' }}</h1>  
+
+  <div class="details-container" *ngIf="!isEditing && userProfile">
+    <div class="user-info">
+      <p>Name: {{ userProfile.name }}</p>
+      <p>Surname: {{ userProfile.surname }}</p>
+      <p>Email: {{ userProfile.email }}</p>
+      <p>Phone: {{ userProfile.phone }}</p>
+      <p>Favorite Programming Language: {{ userProfile.favoriteProgrammingLanguage }}</p>
+    </div>
+
+    <div class="btn-edit">
+      <button (click)="editProfile()">Edit</button>
+    </div>
+  </div>
+
+  <div *ngIf="isEditing && userProfile">
+    <app-edit-profile 
+      [userProfile]="userProfile" 
+      (profileUpdated)="saveProfile($event)"
+      (cancelEditing)="cancelEdit()"> 
+    </app-edit-profile>
+  </div>
+</div>

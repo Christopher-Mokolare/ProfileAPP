@@ -1,0 +1,62 @@
+
+
+h1 {
+  text-align: center;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  color: tomato;
+  font-size: 3rem;
+}
+
+.details-container{
+border: 3px solid tomato;
+padding: 4rem 18%;
+}
+p{
+  text-align: left;
+}
+.user-info {
+  text-align: left;
+  font-family:sans-serif;
+  color: rgba(0, 0, 0, 0.466);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+button {
+  background-color: tomato;
+  color: white;
+  border: none;
+  padding: .5rem 3rem;
+  margin: 5rem 0 0;
+  cursor: pointer;
+
+}
+button:hover {
+  background-color: hsl(9, 100%, 70%);
+}
+
+@media (width:768px){
+h1 {
+  font-size: 1.5rem;
+  }
+  .details-container
+  .user-info p{
+    margin: 0 345rem 0 ;
+  }
+
+  .details-container{
+
+    padding: 2rem 12%;
+    }
+}
